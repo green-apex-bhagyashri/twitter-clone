@@ -1,0 +1,7 @@
+<%= form_with model: [ @tweet, Retweet.new ] do |form| %>
+ Your comment:<br>
+ <%= form.text_area :content, size: "20*5" %>
+ <br>
+ <%= form.submit "Retweet" %>
+<% end %> 
+<br>

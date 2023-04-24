@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1><strong>Title:</strong></h1>
+  <%= @tweet.title %>
+</p>
+
+<p>
+  <h1><strong>Description:</strong></h1>
+  <%= @tweet.description %>
+</p>
+
+
+
+<%= render "tweets/retwetting", tweet: @tweet %>
+
+<%= link_to 'Edit', edit_tweet_path(@tweet), class: "blue" if @tweet.user_id == current_user.id%> 
+
+<%= link_to 'Back', tweets_path , class: "red"%>
+

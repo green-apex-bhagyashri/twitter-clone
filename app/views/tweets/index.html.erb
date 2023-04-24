@@ -1,0 +1,33 @@
+
+
+<div class="show_flex">
+  <div style="width:50%">
+    <%= form_tag(tweets_path, :method => "get") do%>
+      <%= search_field_tag :search, params[:search], class: "search"%>
+      <%= button_tag "search", class: "blue"%>
+    <%end%>
+  </div>
+  <div  style="width:50%; text-align:right">
+    <% if user_signed_in? %>
+      <%= link_to "New Tweet", new_tweet_path, class: "blue"%>
+    <%end%>
+  </div>
+</div>
+
+<br>
+<h1 class="center">List of All Tweets</h1>
+ <hr>
+<div class="index_page">
+<% @tweets.each do |tweet| %>
+  <div class="blog">
+    <%#= render partial: "tweets/#{tweet.tweet_type}", locals: {tweet: tweet} %>
+   
+    <h2>Tweet Title:-</h2> <%= tweet.title %><br>
+    <h2>Tweet Description :- </h2>  <%= tweet.description %>
+    <br>
+    <%= link_to 'Show', tweet , class: "button"%>
+    <hr>
+<% end %>
+</div>
+
+

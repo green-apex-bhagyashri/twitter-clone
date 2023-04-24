@@ -1,0 +1,8 @@
+
+<div id="retweet">
+	<%= render tweet.retweets %>
+</div>
+
+<%if user_signed_in? && tweet.user_id != current_user.id%>
+<%= render "retweets/new", tweet: tweet %>
+<%end%>
